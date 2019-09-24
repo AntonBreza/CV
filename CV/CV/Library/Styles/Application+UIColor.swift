@@ -1,6 +1,6 @@
 //
 //  UIColor + Extension.swift
-//  ApiManagerExample
+//  CV
 //
 //  Created by Anton Breza Dev on 7/3/19.
 //  Copyright © 2019 Anton Breza DEV. All rights reserved.

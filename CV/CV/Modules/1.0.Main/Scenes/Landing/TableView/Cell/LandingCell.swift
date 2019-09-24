@@ -1,37 +1,33 @@
 //
-//  ProfileCell.swift
+//  LandingCell.swift
 //  CV
 //
-//  Created by Anton Breza Dev on 7/14/19.
+//  Created by Anton Breza Dev on 9/24/19.
 //  Copyright © 2019 Anton Breza Dev. All rights reserved.
 //
 
 import UIKit
 
-class ProfileCell: UITableViewCell {
+class LandingCell: UITableViewCell {
 
     // MARK: - IBOutlets
 
-    @IBOutlet weak var profileLabel: UILabel!
-    @IBOutlet weak var profileImageView: UIImageView!
-    @IBOutlet weak var separatorView: UIView!
+    @IBOutlet weak var titleLabel: UILabel!
+    @IBOutlet weak var iconImageView: UIImageView!
 
     // MARK: - Setup UI
 
     private func setupStyles() {
 
-        profileLabel
+        titleLabel
             .background(.clear)
             .font(.roboto(.s15))
             .textColor(.itDarkGrey)
 
-        profileImageView
+        iconImageView
             .background(.clear)
             .contentMode(.center)
             .tintColor(.itDarkGrey)
-
-        separatorView
-            .background(.itGrey)
 
         contentView
             .background(.clear)
@@ -46,8 +42,8 @@ class ProfileCell: UITableViewCell {
 
     // MARK: - Public methods
 
-    public func setupWith(dataSource: ProfileCellDataSource) {
-        profileLabel.text = dataSource.title
-        profileImageView.image = UIImage(named: dataSource.imageName)?.withRenderingMode(.alwaysTemplate)
+    public func setupWith(dataSource: LandingCellDataSource) {
+        titleLabel.text = dataSource.title
+        iconImageView.image = UIImage(named: dataSource.imageName)?.withRenderingMode(.alwaysTemplate)
     }
 }

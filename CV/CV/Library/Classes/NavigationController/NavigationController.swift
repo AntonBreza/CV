@@ -1,6 +1,6 @@
 //
 //  NavigationController.swift
-//  ApiManagerExample
+//  CV
 //
 //  Created by Anton Breza Dev on 7/2/19.
 //  Copyright © 2019 Anton Breza DEV. All rights reserved.
@@ -29,6 +29,10 @@ class NavigationController: UINavigationController {
         self.setNavigationTitleAttributes()
     }
 
+    override init(nibName nibNameOrNil: String?, bundle nibBundleOrNil: Bundle?) {
+        super.init(nibName: nibNameOrNil, bundle: nibBundleOrNil)
+    }
+
     required init?(coder aDecoder: NSCoder) {
         super.init(coder: aDecoder)
         self.setNavigationTitleAttributes()
@@ -43,7 +47,6 @@ class NavigationController: UINavigationController {
         self.styleViewController(viewController: viewController, root: root)
         tabBarItem.title = tabBarTitle
         super.pushViewController(viewController, animated: animated)
-        interactivePopGestureRecognizer?.isEnabled = false
     }
 
     override func popViewController(animated: Bool) -> UIViewController? {
@@ -95,7 +98,7 @@ class NavigationController: UINavigationController {
     }
 
     private func setNavigationTitleAttributes() {
-        self.navigationBar.titleTextAttributes = [NSAttributedString.Key.font: UIFont.robotoLight(.s19)]
+        self.navigationBar.titleTextAttributes = [NSAttributedString.Key.font: UIFont.roboto(.s16)]
     }
 
     // MARK: - Back Button
@@ -105,8 +108,8 @@ class NavigationController: UINavigationController {
             let viewController = self.viewControllers.last else {
                 return
         }
-        self.backButtonTextCache[viewController] = viewController.title
-        viewController.title = ""
+        self.backButtonTextCache[viewController] = viewController.navigationItem.title
+        viewController.navigationItem.title = ""
     }
 
     private func uncacheTitleAndShow(viewController: UIViewController?) {
@@ -115,7 +118,7 @@ class NavigationController: UINavigationController {
             let cachedTitle = self.backButtonTextCache[viewController] else {
                 return
         }
-        viewController.title = cachedTitle
+        viewController.navigationItem.title = cachedTitle
         self.backButtonTextCache[viewController] = nil
     }
 }

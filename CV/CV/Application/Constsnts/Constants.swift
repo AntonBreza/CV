@@ -1,6 +1,6 @@
 //
 //  Constants.swift
-//  ApiManagerExample
+//  CV
 //
 //  Created by Anton Breza Dev on 7/4/19.
 //  Copyright © 2019 Anton Breza DEV. All rights reserved.

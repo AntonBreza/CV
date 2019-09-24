@@ -21,11 +21,8 @@ class AboutAppController: UIViewController {
         textLabel
             .font(.roboto(.s14))
             .textColor(.itDarkGrey)
-            .text(Localization.Profile.aboutText.localized)
+            .text(Localization.Landing.aboutText.localized)
             .lineSpacing(4.0, alignment: .justified)
-
-        navigationItem
-            .title(Localization.ProfileMenu.appInfo.localized)
     }
 
     // MARK: - Lifecycle

@@ -1,5 +1,5 @@
 //
-//  SearchPresenter.swift
+//  LandingPresenter.swift
 //  CV
 //
 //  Created by Anton Breza Dev on 7/12/19.
@@ -8,31 +8,30 @@
 
 import Foundation
 
-class ProfilePresenter {
+class LandingPresenter {
 
     // MARK: - Properties
 
-    private weak var view: ProfileViewController?
-    private weak var router: ProfileRouterDelegate?
+    public weak var view: LandingController?
 
-    private let shouldShowLogoutMessage: Bool = false
+    private unowned let router: ProfileRouterDelegate
+    private let model: LandingModel
 
-    public let model: ProfileMenuModel
+    public var rowsCount: Int {
+        return model.menu.count
+    }
 
-    public lazy var dataSource = ProfileTableDataSource(presenter: self)
+    public var items: [LandingCellDataSource] {
+        return model.menu
+    }
 
     public var profileName: String {
         return String()
     }
 
-    public var profileCode: String {
-        return String.empty
-    }
-
     // MARK: - Lifecycle
 
-    init(view: ProfileViewController?, router: ProfileRouterDelegate?, model: ProfileMenuModel) {
-        self.view = view
+    init(router: ProfileRouterDelegate, model: LandingModel) {
         self.router = router
         self.model = model
     }

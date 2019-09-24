@@ -1,6 +1,6 @@
 //
 //  AppRouter.swift
-//  ApiManagerExample
+//  CV
 //
 //  Created by Anton Breza Dev on 7/2/19.
 //  Copyright © 2019 Anton Breza DEV. All rights reserved.
@@ -29,6 +29,8 @@ class ApplicationRouter  {
 
     public unowned let application: Application
 
+    private lazy var mainRouter = MainRouter(applicationRouter: self, serviceProvider: self.application)
+
     private let window: UIWindow
 
     // MARK: - Lifecycle
@@ -46,7 +48,7 @@ class ApplicationRouter  {
     }
 
     private func start() {
-        
+        mainRouter.perform(.landing)
     }
 }
 

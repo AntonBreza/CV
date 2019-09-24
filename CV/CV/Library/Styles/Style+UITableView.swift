@@ -47,6 +47,12 @@ extension UITableView {
     }
 
     @discardableResult
+    public func tableHeader(_ tableHeader: UIView) -> UITableView {
+        self.tableHeaderView = tableHeader
+        return self
+    }
+
+    @discardableResult
     public func registerCell<T: UITableViewCell>(_ class: T.Type) -> UITableView {
         let name = String(describing: `class`.self)
         let nib = UINib(nibName: name, bundle: nil)

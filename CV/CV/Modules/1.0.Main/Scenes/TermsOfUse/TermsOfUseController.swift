@@ -20,11 +20,8 @@ class TermsOfUseController: KeyboardAdjustableController {
         textView
             .font(.roboto(.s14))
             .textColor(.itDarkGrey)
-            .text(Localization.Profile.termsOfUse.localized)
+            .text(Localization.Landing.termsOfUse.localized)
             .lineSpacing(4.0, alignment: .justified)
-
-        navigationItem
-            .title(Localization.ProfileMenu.conditionsInfo.localized)
     }
 
     // MARK: - Lifecycle

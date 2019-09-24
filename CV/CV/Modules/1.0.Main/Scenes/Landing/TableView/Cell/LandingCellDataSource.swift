@@ -1,5 +1,5 @@
 //
-//  ProfileCellDataSource.swift
+//  LandingCellDataSource.swift
 //  CV
 //
 //  Created by Anton Breza Dev on 7/14/19.
@@ -8,15 +8,15 @@
 
 import Foundation
 
-protocol ProfileCellDataSource {
+protocol LandingCellDataSource {
 
     var title: String { get }
     var imageName: String { get }
 }
 
-// MARK: - ProfileModel
+// MARK: - LandingModel
 
-extension Localization.ProfileMenu: ProfileCellDataSource {
+extension LandingModel.Row: LandingCellDataSource {
 
     var title: String {
         return localized
