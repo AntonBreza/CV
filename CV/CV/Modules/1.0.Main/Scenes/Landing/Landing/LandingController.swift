@@ -23,7 +23,7 @@ class LandingController: UIViewController, ApiRequestDelegate {
 
     @IBOutlet weak var tableView: UITableView!
 
-    // MARK: - Setup UI
+    // MARK: - Setup Styles
 
     private func setupStyles() {
 
