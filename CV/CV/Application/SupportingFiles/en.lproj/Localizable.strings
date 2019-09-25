@@ -1,0 +1,30 @@
+/* 
+  Localizable.strings
+  CV
+
+  Created by Anton Breza Dev on 9/25/19.
+  Copyright © 2019 Anton Breza Dev. All rights reserved.
+*/
+
+"common_error_occured" = "Error";
+"common_no_internet_connection" = "No internet connection";
+"common_no_items_available" = "No items available";
+"common_retry" = "Retry";
+"common_ok" = "OK";
+"common_cancel" = "Cancel";
+
+"common_error_something_went_wrong" = "Something went wrong. Please, try again later or contact the deveploper";
+"common_error_unable_to_load_profile" = "Unable to load profile";
+"common_error_no_matches_for_current_request" = "No matches found";
+"common_error_missing_url" = "Failed to load data. Please, try again later or contact the deveploper";
+"common_error_unable_to_perform_request" = "Unable to perform request";
+
+"row_general_info" = "General info";
+"row_education" = "Education";
+"row_employment_history" = "Employment history";
+"row_skills" = "Skills";
+"row_languages" = "Languages";
+
+"general_info_address" = "Address";
+"general_info_phone" = "Phone";
+"general_info_email" = "Email";

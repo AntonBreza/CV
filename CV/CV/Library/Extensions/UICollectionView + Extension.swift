@@ -2,8 +2,8 @@
 //  UICollectionView+Extension.swift
 //  Jammi
 //
-//  Created by Yehor Klosov on 7/19/18.
-//  Copyright © 2018 ZLX. All rights reserved.
+//  Created by Anton Breza Dev on 7/19/18.
+//  Copyright © 2018 Anton Breza Dev. All rights reserved.
 //
 
 import UIKit

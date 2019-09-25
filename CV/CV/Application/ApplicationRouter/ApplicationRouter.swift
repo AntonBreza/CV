@@ -50,6 +50,8 @@ class ApplicationRouter  {
     private func start() {
         mainRouter.perform(.landing)
     }
+
+    //https://AntonBreza.github.io/CV/cv.json
 }
 
 // MARK: - AppRouterDelegate

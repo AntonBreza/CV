@@ -8,8 +8,13 @@
 
 import Foundation
 
-extension Data {
+public extension Data {
+
     func log() {
-        print(String(data: self, encoding: .utf8) ?? String.empty)
+        print(logDescription)
+    }
+
+    var logDescription: String {
+        return String(data: self, encoding: .utf8) ?? String.empty
     }
 }

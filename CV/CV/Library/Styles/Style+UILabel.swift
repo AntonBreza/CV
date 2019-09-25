@@ -2,8 +2,8 @@
 //  Style+UILabel.swift
 //
 //
-//  Created by Yehor Klosov on 2/5/19.
-//  Copyright © 2019 ZLX. All rights reserved.
+//  Created by Anton Breza Dev on 2/5/19.
+//  Copyright © 2019 Anton Breza Dev. All rights reserved.
 //
 
 import UIKit
@@ -173,8 +173,8 @@ public extension UILabel {
 
         public static var listEmtpy: (UILabel) -> (UILabel) {
             return { $0.background(.clear)
-                .font(.roboto(.s16))
-                .textColor(.itDarkGrey)
+                .font(.appFont(.s16))
+                .textColor(.cvDarkGrey)
                 .textAlignment(.center)
             }
         }
@@ -189,29 +189,51 @@ public extension UILabel {
 
         public static var light38: (UILabel) -> (UILabel) {
             return { $0.background(.clear)
-                .font(.roboto(.s38))
-                .textColor(.itDarkGrey)
+                .font(.appFont(.s38))
+                .textColor(.cvDarkGrey)
             }
         }
 
         public static var light30: (UILabel) -> (UILabel) {
             return { $0.background(.clear)
-                .font(.roboto(.s30))
-                .textColor(.itDarkGrey)
+                .font(.appFont(.s30))
+                .textColor(.cvDarkGrey)
             }
         }
 
         public static var light23: (UILabel) -> (UILabel) {
             return { $0.background(.clear)
-                .font(.roboto(.s23))
-                .textColor(.itDarkGrey)
+                .font(.appFont(.s23))
+                .textColor(.cvDarkGrey)
             }
         }
 
-        public static var light18: (UILabel) -> (UILabel) {
+        public static var light14: (UILabel) -> (UILabel) {
             return { $0.background(.clear)
-                .font(.roboto(.s23))
-                .textColor(.itDarkGrey)
+                .font(.appFontLight(.s14))
+                .textColor(.cvDarkGrey)
+            }
+        }
+
+        public static var normal14: (UILabel) -> (UILabel) {
+            return { $0.background(.clear)
+                .font(.appFont(.s14))
+                .textColor(.cvDarkGrey)
+            }
+        }
+
+        public static var normal16: (UILabel) -> (UILabel) {
+            return { $0.background(.clear)
+                .font(.appFont(.s16))
+                .textColor(.cvDarkGrey)
+                .lineSpacing(5.0)
+            }
+        }
+
+        public static var bold14: (UILabel) -> (UILabel) {
+            return { $0.background(.clear)
+                .font(.appFontBold(.s14))
+                .textColor(.cvDarkGrey)
             }
         }
     }

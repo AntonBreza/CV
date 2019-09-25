@@ -19,6 +19,11 @@ class MainRouter {
 
     enum Action {
         case landing
+        case generalInfo(LandingHeaderPresenter, ContactEntity)
+        case education([EducationEntity])
+        case employment([EmploymentHistory])
+        case skills(SkillEntity)
+        case languages([Language])
     }
 
     // MARK: - Properties
@@ -37,22 +42,47 @@ class MainRouter {
 
     // MARK: - Public methods
 
-    private func showProfile() {
+    private func showLanding() {
         let navigationController = NavigationController()
-        let model = LandingModel(userService: serviceProvider.userService)
-        let presenter = LandingPresenter(router: self, model: model)
-        let landingController = LandingController(presenter: presenter)
+        let apiModel = ProfileApiModel(apiService: serviceProvider.apiService, logService: serviceProvider.logService)
+        let model = LandingModel(apiModel: apiModel)
+        let headerPresener = LandingHeaderPresenter(imageService: serviceProvider.imageService)
+        let presenter = LandingPresenter(router: self, model: model, headerPresenter: headerPresener)
+        let landingController = LandingController(presenter: presenter, alertService: serviceProvider.alertService)
         navigationController.pushViewController(landingController, animated: false)
         applicationRouter.perform(.setRootViewController(navigationController))
         self.navigationController = navigationController
     }
 
-    private func presentSafariControllerFor(urlString: String?) {
-        guard let url = URL(urlString), url.isHTTPScheme else {
-            return
-        }
-        let safariViewController = SFSafariViewController(url: url)
-        navigationController?.present(safariViewController, animated: true, completion: nil)
+    private func showGeneralInfo(headerPresenter: LandingHeaderPresenter, contactEntity: ContactEntity) {
+        let presenter = GeneralInfoPresenter(router: self, contactEntity: contactEntity, headerPresenter: headerPresenter)
+        let controller = GeneralInfoController(presenter: presenter, alertService: serviceProvider.alertService)
+        navigationController?.pushViewController(controller, animated: true)
+    }
+
+    private func showEducation(_ entities: [EducationEntity]) {
+        let presenter = EducationPresenter(entities: entities)
+        showDetailsTable(presenter)
+    }
+
+    private func showEmployment(_ entities: [EmploymentHistory]) {
+        let presenter = EmploymentPresenter(entities: entities)
+        showDetailsTable(presenter)
+    }
+
+    private func showSkills(_ entity: SkillEntity) {
+        let presenter = SkillsPresenter(entity: entity)
+        showDetailsTable(presenter)
+    }
+
+    private func showLanguages(_ entities: [Language]) {
+        let presenter = LanguagesPresenter(entities: entities)
+        showDetailsTable(presenter)
+    }
+
+    private func showDetailsTable(_ dataSource: DetailsTableDataSource) {
+        let controller = DetailsTableController(dataSource: dataSource)
+        navigationController?.pushViewController(controller, animated: true)
     }
 }
 
@@ -63,7 +93,17 @@ extension MainRouter: ProfileRouterDelegate {
     func perform(_ action: MainRouter.Action) {
         switch action {
         case .landing:
-            showProfile()
+            showLanding()
+        case .generalInfo(let headerPresenter, let contactEntity):
+            showGeneralInfo(headerPresenter: headerPresenter, contactEntity: contactEntity)
+        case .education(let entities):
+            showEducation(entities)
+        case .employment(let entities):
+            showEmployment(entities)
+        case .skills(let entity):
+            showSkills(entity)
+        case .languages(let entities):
+            showLanguages(entities)
         }
     }
 }

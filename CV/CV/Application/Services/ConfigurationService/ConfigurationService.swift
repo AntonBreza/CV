@@ -26,10 +26,10 @@ class ConfigurationService {
     // MARK: - Lifecycle
 
     init() {
-        #if DEVELOPMENT
-        environmentType = .development
-        #else
+        #if PRODUCTION
         environmentType = .production
+        #else
+        environmentType = .development
         #endif
     }
 

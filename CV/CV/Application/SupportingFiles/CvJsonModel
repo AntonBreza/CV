@@ -1,0 +1,58 @@
+//Use model at: http://www.objgen.com/json
+
+person
+    name = Anton Breza
+    position = iOS Software Developer
+    dateOfBirth = DOB: 23.11.1984
+
+contact
+    street = Stanisława Staszica 10A
+    countryPostcode = 82-500 Kwidzyn, Poland
+    phone = +48 693 863 398
+    email = antonrxdt@gmail.com
+
+education[0]
+    organization = Uzhgorod National University, Faculty of Economics
+    result = Masters degree with Honours
+    graduation = Graduated June 2006
+    education[1]
+    organization = ThinkMobiles, Uzhgorod, C++ course
+    result = Certificate of completion
+    graduation = Graduated August 2016
+
+employmentHistory[0]
+    organization = PettersonApps, Uzhgorod
+    position = iOS Developer
+    period = September 2016 — February 2019
+    generalInfo = Participated in 8 projects
+    description = 3 projects - from scratch to App Store publishing -- 2 projects - redesign and new features implementation -- 3 projects - support and new functionality implementation -- Lead role in one project, mentoring junior developer   -- Languages: - 6 projects - Swift, 1 - Objective C, 1 - both languages -- Experience both in working independently (sole on iOS) and in bigger teams (up to 20+ project members) -- Wide variety of applications - mobile insurance, e-commerce, day-to-day service, learning languages, media, social network
+
+employmentHistory[1]
+    organization = Sannacode, Kiev
+    position = iOS Developer
+    period = February 2019 — Present
+    generalInfo = Participated in 4 projects, Swift language, both for iPad and iPhone
+    description = Media application and  loyalty cards wallet application - from scratch to App Store publishing -- Check & compare grocery prices application - support and new functionality implementation -- Food delivery application - in development
+
+skills[0]
+    programmingLanguages[0] = Swift, Objective C
+    taskTrackingTools[0] = Jira, YouTrack
+    architecturePatterns[0] = MVC, MVP, MVVM, MVP + R
+    frameworks[0] = MapKit, CoreData, GDC, StoreKit, AVFoundation, Alamofire, Google Maps SDK for iOS, SwiftPhoenixClient, TwitterKit, FBSDKShareKit
+    developmentTools[0] = Xcode, Git
+
+languages[0]
+    title = Urkainian
+    level = native
+
+languages[1]
+    title = Russian
+    level = native
+
+languages[2]
+    title = English
+    level = proficient user
+
+
+
+

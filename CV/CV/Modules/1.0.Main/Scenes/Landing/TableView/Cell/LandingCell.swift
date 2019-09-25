@@ -21,13 +21,13 @@ class LandingCell: UITableViewCell {
 
         titleLabel
             .background(.clear)
-            .font(.roboto(.s15))
-            .textColor(.itDarkGrey)
+            .font(.appFont(.s15))
+            .textColor(.cvDarkGrey)
 
         iconImageView
             .background(.clear)
             .contentMode(.center)
-            .tintColor(.itDarkGrey)
+            .tintColor(.cvTurquoise)
 
         contentView
             .background(.clear)

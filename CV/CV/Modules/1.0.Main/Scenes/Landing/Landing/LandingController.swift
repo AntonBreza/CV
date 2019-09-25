@@ -8,15 +8,6 @@
 
 import UIKit
 
-extension Localization {
-    enum Landing: String, Localizable {
-        case tabTitle
-        case aboutText
-        case termsOfUse
-        case logout
-    }
-}
-
 class LandingController: UIViewController, ApiRequestDelegate {
 
     // MARK: - IBOutlets
@@ -30,17 +21,26 @@ class LandingController: UIViewController, ApiRequestDelegate {
         tableView
             .background(.clear)
             .registerCell(LandingCell.self)
-            .tableHeader(LandingTableHeader())
-   }
+            .tableHeader(tableHeader)
+            .refreshControl(self, selector: #selector(handleRetryAction))
+            .tableFooter(UIView())
+
+        view
+            .background(.cvWhite)
+    }
 
     // MARK: - Propeties
 
     private let presenter: LandingPresenter
+    private let alertService: AlertService
+
+    private lazy var tableHeader = LandingHeader(presenter: presenter.headerPresenter)
 
     // MARK: - Lifecycle
 
-    init(presenter: LandingPresenter) {
+    init(presenter: LandingPresenter, alertService: AlertService) {
         self.presenter = presenter
+        self.alertService = alertService
         super.init(nibName: nil, bundle: nil)
         presenter.view = self
     }
@@ -54,8 +54,11 @@ class LandingController: UIViewController, ApiRequestDelegate {
         setupStyles()
     }
 
-    // MARK: - Private methods
+    // MARK: - Public methods
 
+    public func showAlert(_ error: Error) {
+        alertService.showAlert(error)
+    }
 }
 
 // MARK: - UITableViewDataSource
@@ -81,7 +84,24 @@ extension LandingController: UITableViewDataSource {
 extension LandingController: UITableViewDelegate {
 
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        presenter.didSelectRowAt(indexPath)
+        do {
+            try presenter.didSelectRowAt(indexPath)
+        } catch {
+            alertService.showAlert(error)
+        }
+    }
+}
+
+// MARK: - ContentUnavailableDelegate
+
+extension LandingController: ContentUnavailableDelegate {
+
+    @objc func handleRetryAction() {
+        tableView?.refreshControl?.endRefreshing()
+        let deadline = DispatchTime.now() + TimeInterval.animation.t0_25
+        DispatchQueue.main.asyncAfter(deadline: deadline) { [weak self] in
+            self?.presenter.retry()
+        }
     }
 }
 

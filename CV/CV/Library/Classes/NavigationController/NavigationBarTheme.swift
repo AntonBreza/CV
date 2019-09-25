@@ -21,9 +21,9 @@ enum NavigationBarTheme {
     var settings: Settings? {
         switch self {
         case .mainOpaque:
-            return Settings(isTranslucent: false, backgroundColor: .itWhite, tintColor: .itDarkGrey)
+            return Settings(isTranslucent: false, backgroundColor: .cvWhite, tintColor: .cvDarkGrey)
         case .translucent:
-            return Settings(isTranslucent: true, backgroundColor: .clear, tintColor: .itDarkGrey)
+            return Settings(isTranslucent: true, backgroundColor: .clear, tintColor: .cvDarkGrey)
         case .hidden:
             return nil
         }

@@ -98,7 +98,7 @@ class NavigationController: UINavigationController {
     }
 
     private func setNavigationTitleAttributes() {
-        self.navigationBar.titleTextAttributes = [NSAttributedString.Key.font: UIFont.roboto(.s16)]
+        self.navigationBar.titleTextAttributes = [NSAttributedString.Key.font: UIFont.appFont(.s18)]
     }
 
     // MARK: - Back Button

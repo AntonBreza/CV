@@ -2,8 +2,8 @@
 //  Style+UIActivityIndicatorView.swift
 //
 //
-//  Created by Yehor Klosov on 2/5/19.
-//  Copyright © 2019 ZLX. All rights reserved.
+//  Created by Anton Breza Dev on 2/5/19.
+//  Copyright © 2019 Anton Breza Dev. All rights reserved.
 //
 
 import UIKit
@@ -104,9 +104,9 @@ public extension UIActivityIndicatorView {
 
         public static var controllerIndicator: (UIActivityIndicatorView) -> (UIActivityIndicatorView) {
             return { $0
-                .background(.itLightGrey)
+                .background(.cvLightGrey)
                 .style(.whiteLarge)
-                .color(.itTurquoise)
+                .color(.cvTurquoise)
                 .dimension(45.0)
                 .hidesWhenStopped(true)
                 .animate(false)

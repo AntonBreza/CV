@@ -2,8 +2,8 @@
 //  Style+UITextView.swift
 //
 //
-//  Created by ZLX on 3/11/19.
-//  Copyright © 2019 ZLX. All rights reserved.
+//  Created by Anton Breza Dev on 3/11/19.
+//  Copyright © 2019 Anton Breza Dev. All rights reserved.
 //
 
 import UIKit

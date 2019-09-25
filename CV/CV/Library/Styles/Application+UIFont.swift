@@ -35,20 +35,20 @@ public enum Size: Float {
 public extension UIFont {
 
     enum AppFont: String  {
-        case roboto = "Roboto-Regular"
-        case robotoLight = "Roboto-Light"
-        case robotoBold = "Roboto-Bold"
+        case verdana = "Verdana"
+        case verdanaItalic = "Verdana-Italic"
+        case verdanaBold = "Verdana-Bold"
     }
 
-    static func roboto(_ size: Size) -> UIFont {
-        return UIFont(name: AppFont.roboto.rawValue, size: CGFloat(size.rawValue)) ?? UIFont.systemFont(ofSize: CGFloat(size.rawValue))
+    static func appFont(_ size: Size) -> UIFont {
+        return UIFont.systemFont(ofSize: CGFloat(size.rawValue))
     }
 
-    static func robotoLight(_ size: Size) -> UIFont {
-        return UIFont(name: AppFont.robotoLight.rawValue, size: CGFloat(size.rawValue)) ?? UIFont.systemFont(ofSize: CGFloat(size.rawValue))
+    static func appFontLight(_ size: Size) -> UIFont {
+        return UIFont.systemFont(ofSize: CGFloat(size.rawValue), weight: .light)
     }
 
-    static func robotoBold(_ size: Size) -> UIFont {
-        return UIFont(name: AppFont.robotoBold.rawValue, size: CGFloat(size.rawValue)) ?? UIFont.systemFont(ofSize: CGFloat(size.rawValue))
+    static func appFontBold(_ size: Size) -> UIFont {
+        return UIFont(name: AppFont.verdanaBold.rawValue, size: CGFloat(size.rawValue)) ?? UIFont.systemFont(ofSize: CGFloat(size.rawValue), weight: .bold)
     }
 }

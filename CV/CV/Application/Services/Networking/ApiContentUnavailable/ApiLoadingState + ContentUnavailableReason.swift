@@ -86,7 +86,7 @@ public extension ApiLoadingState.ContentUnavailableReason {
             return isImageViewHidden ? NSTextAlignment.center : .left
         }
 
-        static let emptySearch = Settings(title: Localization.CommonError.noMatchesForCurrentRequest.localizedDescription,
+        static let emptySearch = Settings(title: Localization.Common.Error.noMatchesForCurrentRequest.localizedDescription,
                                           isActionButtonHidden: true)
 
         static let noInternet = Settings(image: #imageLiteral(resourceName: "no_internet_error_icon"),

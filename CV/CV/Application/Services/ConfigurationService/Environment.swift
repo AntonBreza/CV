@@ -11,6 +11,4 @@ import Foundation
 protocol Environment {
 
     var baseUrl: String { get }
-    var login: String? { get }
-    var password: String? { get }
 }

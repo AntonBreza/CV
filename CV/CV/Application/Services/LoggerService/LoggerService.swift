@@ -11,7 +11,7 @@ import Foundation
 public struct LogService {
 
     public enum LogType: String, CaseIterable {
-        case 💾, 🗞, 🧩, 📤, 💳, 📝, 💣
+        case 💾, 🉐, 🧩, 📤, 💳, 📝, 🆘
     }
 
     // MARK: - Properties

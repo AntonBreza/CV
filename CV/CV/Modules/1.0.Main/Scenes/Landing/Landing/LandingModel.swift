@@ -17,7 +17,7 @@ class LandingModel {
         case generalInfo
         case education
         case employmentHistory
-        case skils
+        case skills
         case languages
 
         var index: Int {
@@ -27,16 +27,13 @@ class LandingModel {
 
     // MARK: - Properties
 
-    private let userService: UserService
+    public let apiModel: ProfileApiModel
 
     public let menu = Row.allCases
 
     // MARK: - Lifecycle
 
-    public init(userService: UserService) {
-        self.userService = userService
+    public init(apiModel: ProfileApiModel) {
+        self.apiModel = apiModel
     }
-
-    // MARK: - Public methods
-
 }

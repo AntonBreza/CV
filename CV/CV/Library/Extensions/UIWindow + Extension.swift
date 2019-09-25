@@ -2,8 +2,8 @@
 //  UIWindow + Extension.swift
 //
 //
-//  Created by Yehor Klosov Dev on 4/2/19.
-//  Copyright © 2019 ZLX. All rights reserved.
+//  Created by Anton Breza Dev Dev on 4/2/19.
+//  Copyright © 2019 Anton Breza Dev. All rights reserved.
 //
 
 import UIKit

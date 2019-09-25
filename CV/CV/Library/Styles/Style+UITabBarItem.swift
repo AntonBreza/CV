@@ -2,8 +2,8 @@
 //  Style+UITabBar.swift
 //
 //
-//  Created by Yehor Klosov on 2/5/19.
-//  Copyright © 2019 ZLX. All rights reserved.
+//  Created by Anton Breza Dev on 2/5/19.
+//  Copyright © 2019 Anton Breza Dev. All rights reserved.
 //
 
 import UIKit

@@ -2,8 +2,8 @@
 //  Style+UITextField.swift
 //
 //
-//  Created by Yehor Klosov on 2/5/19.
-//  Copyright © 2019 ZLX. All rights reserved.
+//  Created by Anton Breza Dev on 2/5/19.
+//  Copyright © 2019 Anton Breza Dev. All rights reserved.
 //
 
 import UIKit
@@ -181,25 +181,25 @@ extension UITextField {
         public static var search: (UITextField) -> (UITextField) {
             return { $0
                 .style(greyUnderline_1p5)
-                .textColor(.itDarkGrey)
+                .textColor(.cvDarkGrey)
                 .background(.clear)
-                .tintColor(.itGrey)
+                .tintColor(.cvGrey)
                 .returnKey(.search)
                 .autocapitalization(.none)
                 .clearButtonMode(.always)
-                .setupRightImage(#imageLiteral(resourceName: "search_icon"), tintColor: .itGrey)
+                .setupRightImage(#imageLiteral(resourceName: "search_icon"), tintColor: .cvGrey)
             }
         }
 
         public static var greyUnderline_1p5:  (UITextField) -> (UITextField) {
             return { $0
-                .underline(1.5, color: .itGrey)
+                .underline(1.5, color: .cvGrey)
             }
         }
 
         public static var lightGreyUnderline_1:  (UITextField) -> (UITextField) {
             return { $0
-                .underline(1.0, color: .itLightGrey)
+                .underline(1.0, color: .cvLightGrey)
             }
         }
     }

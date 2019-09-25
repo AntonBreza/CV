@@ -16,14 +16,13 @@ class Application {
     public let alertService = AlertService()
     public let configurationService = ConfigurationService()
     public let logService = LogService()
-    public let userService: UserService = UserService()
+
+    private let localization = Localization()
 
     private (set) lazy var applicationRouter = ApplicationRouter(application: self)
 
-    private (set) lazy var apiService: ApiService = {
-        let apiService = ApiService(logService: logService)
-        return apiService
-    }()
+    private (set) lazy var apiService = ApiService(logService: logService)
+    private (set) lazy var imageService = ImageService(apiService: apiService, logService: logService)
 
     // MARK: - Lifecycle
 
@@ -42,7 +41,7 @@ class Application {
     // MARK: -  Private methods
 
     private func setupAlertAppearance() {
-        UIView.appearance(whenContainedInInstancesOf: [UIAlertController.self]).tintColor = .itDarkGrey
+        UIView.appearance(whenContainedInInstancesOf: [UIAlertController.self]).tintColor = .cvDarkGrey
     }
 
     private func setupEnvironment() {
@@ -50,7 +49,8 @@ class Application {
     }
 
     private func checkLocalization() {
-        Localization.logNotLocalized()
+        localization.allNotLocalized.forEach { logService.write(.🉐, $0)}
+        localization.logAllNotLocalized()
     }
 }
 

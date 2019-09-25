@@ -8,12 +8,13 @@
 
 import UIKit
 
-// MARK: - ApiRequestDelegate
-
 extension Constants.Tag {
     static let controllerActivityIndicator: Int = 1001
     static let collecitonActivityIndicator: Int = 1002
+    static let notAvailableView: Int = 1011
 }
+
+// MARK: - ApiRequestDelegate
 
 public protocol ApiRequestDelegate: class {
 

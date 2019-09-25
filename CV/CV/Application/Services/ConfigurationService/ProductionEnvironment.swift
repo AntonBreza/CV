@@ -10,7 +10,5 @@ import Foundation
 
 struct ProductionEnvironment: Environment {
 
-    let baseUrl: String = "https://itcluster.cards/"
-    let login: String? = nil //"vitalii.sokotun@Anton Breza Dev.com"
-    let password: String? = nil //"qwerty1"
+    let baseUrl: String = "https://antonbreza.github.io/CV/"
 }

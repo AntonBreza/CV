@@ -47,12 +47,25 @@ public extension ApiRequestDelegate where Self: UIViewController {
     }
 
     private func showAlert(_ error: Error) {
-        guard isViewLoaded, view.window != nil else {
+        guard isViewLoaded,
+            view.window != nil,
+            !(presentingViewController is UIAlertController) else {
             return
         }
-        let composer = AlertComposer(message: error.localizedDescription, actions: [AlertComposer.ok()])
+        let actions = [retryAction(for: error), AlertComposer.ok()].compactMap { $0 }
+        let composer = AlertComposer(message: error.localizedDescription, actions: actions)
         let controller = UIAlertController(title: composer.title, message: composer.message, preferredStyle: .alert)
         composer.actions.forEach { controller.addAction($0) }
         present(controller, animated: true, completion: nil)
+    }
+
+    private func retryAction(for error: Error) -> UIAlertAction? {
+        guard (error as NSError).code == ApiStatusCode.noInternetConnection,
+            let contentUnavailableDelegate = self as? ContentUnavailableDelegate else {
+                return nil
+        }
+        return AlertComposer.retry { [weak contentUnavailableDelegate] in
+            contentUnavailableDelegate?.handleRetryAction()
+        }
     }
 }

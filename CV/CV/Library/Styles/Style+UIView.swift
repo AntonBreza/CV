@@ -2,8 +2,8 @@
 //  Style+UIView.swift
 //
 //
-//  Created by Yehor Klosov on 2/5/19.
-//  Copyright © 2019 ZLX. All rights reserved.
+//  Created by Anton Breza Dev on 2/5/19.
+//  Copyright © 2019 Anton Breza Dev. All rights reserved.
 //
 
 import UIKit
@@ -118,11 +118,11 @@ extension UIView {
     struct Common {
 
         public static var mainContainer: (UIView) -> (UIView) {
-            return { $0.background(.itWhite) }
+            return { $0.background(.cvWhite) }
         }
 
         public static var darkContainer: (UIView) -> (UIView) {
-            return { $0.background(.itDarkGrey) }
+            return { $0.background(.cvDarkGrey) }
         }
     }
 }

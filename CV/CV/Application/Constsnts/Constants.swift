@@ -12,14 +12,10 @@ public struct Constants {
 
     public struct Common {}
 
-    public struct Cache {}
-    public struct ExternalURL {}
     public struct User {}
-    public struct Regex {}
     public struct API {}
     public struct Tag {}
-    public struct UniversalLink {}
     public struct Style {}
 
-    public struct Waiter {}
+    public struct Landing {}
 }

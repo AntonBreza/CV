@@ -2,8 +2,8 @@
 //  UITableView+Extension.swift
 //  Jammi
 //
-//  Created by Yehor Klosov on 6/5/18.
-//  Copyright © 2018 ZLX. All rights reserved.
+//  Created by Anton Breza Dev on 6/5/18.
+//  Copyright © 2018 Anton Breza Dev. All rights reserved.
 //
 
 import UIKit

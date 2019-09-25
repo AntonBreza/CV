@@ -10,10 +10,9 @@ import Foundation
 
 protocol ServiceProvider: class {
 
-    var userService: UserService { get }
     var alertService: AlertService { get }
     var logService: LogService { get }
     var apiService: ApiService { get }
-
+    var imageService: ImageService { get }
     var environment: Environment { get }
 }

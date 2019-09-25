@@ -25,20 +25,20 @@ class ContentUnavailableView: UIView, NibLoadable {
     private func setupStyles() {
         imageView
             .background(.clear)
-            .tintColor(.itDarkGrey)
+            .tintColor(.cvDarkGrey)
             .contentMode(.center)
 
         titleLabel
-            .font(.roboto(.s28))
-            .textColor(.itDarkGrey)
+            .font(.appFont(.s28))
+            .textColor(.cvDarkGrey)
 
         messageLabel
-            .font(.roboto(.s20))
-            .textColor(.itDarkGrey)
+            .font(.appFont(.s20))
+            .textColor(.cvDarkGrey)
 
         actionButton
-            .font(.roboto(.s34))
-            .titleColor(.itTurquoise, for: .normal)
+            .font(.appFont(.s34))
+            .titleColor(.cvTurquoise, for: .normal)
             .title(Localization.Common.retry.localized, for: .normal)
     }
 

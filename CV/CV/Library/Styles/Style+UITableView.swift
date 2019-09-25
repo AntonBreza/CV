@@ -2,8 +2,8 @@
 //  Style+UITableView.swift
 //
 //
-//  Created by Yehor Klosov on 2/12/19.
-//  Copyright © 2019 ZLX. All rights reserved.
+//  Created by Anton Breza Dev on 2/12/19.
+//  Copyright © 2019 Anton Breza Dev. All rights reserved.
 //
 
 import UIKit
@@ -57,6 +57,17 @@ extension UITableView {
         let name = String(describing: `class`.self)
         let nib = UINib(nibName: name, bundle: nil)
         self.register(nib, forCellReuseIdentifier: name)
+        return self
+    }
+
+    @discardableResult
+    @objc public func refreshControl(_ target: Any, selector: Selector) -> UITableView {
+        let size = CGSize(width: self.bounds.width, height: 40.0)
+        let frame = CGRect(origin: CGPoint.zero, size: size)
+        let refreshControl = UIRefreshControl(frame: frame)
+        refreshControl.addTarget(target, action: selector, for: UIControl.Event.valueChanged)
+        refreshControl.tintColor = UIColor.cvTurquoise
+        self.refreshControl = refreshControl
         return self
     }
 }

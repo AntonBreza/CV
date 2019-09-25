@@ -2,8 +2,8 @@
 // Style+UIButton.swift
 //
 //
-// Created by Yehor Klosov on 2/5/19.
-// Copyright © 2019 ZLX. All rights reserved.
+// Created by Anton Breza Dev on 2/5/19.
+// Copyright © 2019 Anton Breza Dev. All rights reserved.
 //
 
 import UIKit
@@ -181,8 +181,8 @@ public extension UIButton {
 
         public static var lightBlue13: (UIButton) -> (UIButton) {
             return { $0
-                .font(.roboto(.s13))
-                .titleColor(.itTurquoise, for: .normal)
+                .font(.appFont(.s13))
+                .titleColor(.cvTurquoise, for: .normal)
                 .background(.clear)
             }
         }
@@ -190,9 +190,9 @@ public extension UIButton {
         public static var roundedDarkRed: (UIButton) -> (UIButton) {
             return { $0
                 .contentInsets(36.0, 12.0)
-                .font(.roboto(.s17))
-                .background(.itGoldenRod)
-                .titleColor(.itWhite, for: .normal)
+                .font(.appFont(.s17))
+                .background(.cvGoldenRod)
+                .titleColor(.cvWhite, for: .normal)
                 .masksToBounds(true)
                 .halfCornerRadius()
             }

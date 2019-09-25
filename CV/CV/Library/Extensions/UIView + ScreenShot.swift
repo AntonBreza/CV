@@ -2,8 +2,8 @@
 //  UIView+ScreenShot.swift
 //
 //
-//  Created by ZLX on 3/28/19.
-//  Copyright © 2019 ZLX. All rights reserved.
+//  Created by Anton Breza Dev on 3/28/19.
+//  Copyright © 2019 Anton Breza Dev. All rights reserved.
 //
 
 import UIKit

@@ -8,6 +8,8 @@
 
 import Foundation
 
+public typealias DataTaskCompletion = (Data?, URLResponse?, Error?) -> Void
+
 public class ApiService {
 
     // MARK: - Properties
@@ -27,10 +29,16 @@ public class ApiService {
 
     // MARK: - Public methods
 
-//    public func request(_ context: ApiRequest) -> DataRequest {
-//        logService.write(.📤, try? context.urlConvertible.asURL().absoluteString)
-//        return session
-//            .request(context)
-//            .loggingResponseFailure
-//    }
+    public func request(_ urlConvertible: URLConvertible, completion: @escaping DataTaskCompletion) -> URLSessionDataTask? {
+        do {
+            let url = try urlConvertible.asURL()
+            logService.write(.📤, url.absoluteString)
+            let dataTask = session.dataTask(with: url, completionHandler: completion)
+            dataTask.resume()
+            return dataTask
+        } catch let error {
+            completion(nil, nil, error)
+            return nil
+        }
+    }
 }

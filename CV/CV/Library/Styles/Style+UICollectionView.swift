@@ -2,8 +2,8 @@
 //  Style+UICollectionView.swift
 //
 //
-//  Created by Yehor Klosov on 2/5/19.
-//  Copyright © 2019 ZLX. All rights reserved.
+//  Created by Anton Breza Dev on 2/5/19.
+//  Copyright © 2019 Anton Breza Dev. All rights reserved.
 //
 
 import UIKit
@@ -44,7 +44,7 @@ extension UICollectionView {
     @objc public func refreshControl(_ target: Any, selector: Selector) -> UICollectionView {
         let refreshControl = UIRefreshControl()
         refreshControl.addTarget(target, action: selector, for: UIControl.Event.valueChanged)
-        refreshControl.tintColor = UIColor.itTurquoise
+        refreshControl.tintColor = UIColor.cvTurquoise
         self.refreshControl = refreshControl
         return self
     }
